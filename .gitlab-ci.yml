@@ -11,12 +11,11 @@ variables:
   # If we want to ignore some templates, provide them here.
   #MUSTACHE_IGNORE_NAMES: "<file>.mustache, <file2>.mustache, ..., <filen>.mustache"
   PLUGIN: 'auth_coupon'
+  PATHNAME: 'auth/coupon'
   REPOURL: 'https://github.com/sebsoftnl/moodle-auth_coupon'
   REPOSYS: 'git'
   # Moodle auto format = 0, Markdown = 4, Flat txt = 2
   RELEASENOTEFORMAT: '0'
-  PATHNAME: 'auth/coupon'
-
 
 .job_template: &job_definition
   stage: test
@@ -52,8 +51,6 @@ variables:
     - for i in ${failures[@]}; do echo "$i -- FAIL"; done;
     - if [ "${#failures[@]}" -gt "0" ]; then echo "${#failures[@]} jobs failed"; exit 1; fi;
 
-
-# Add more versions if you want/need.
 Moodle 4.1:
   <<: *job_definition
   variables:
@@ -120,4 +117,3 @@ release:
       --data-urlencode "vcssystem=${REPOSYS}"
       --data-urlencode "releasenotesformat=${RELEASENOTEFORMAT}"
       --data-urlencode "vcstag=${CI_COMMIT_TAG}" | jq
-
