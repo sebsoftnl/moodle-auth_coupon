@@ -22,8 +22,8 @@
  *
  * @package     auth_coupon
  *
- * @copyright   2022 Ing. R.J. van Dongen
- * @author      R.J. van Dongen <rogier@sebsoft.nl>
+ * @copyright   2024 RvD
+ * @author      RvD <helpdesk@sebsoft.nl>
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -34,8 +34,8 @@ namespace auth_coupon\privacy;
  *
  * @package     auth_coupon
  *
- * @copyright   2022 Ing. R.J. van Dongen
- * @author      R.J. van Dongen <rogier@sebsoft.nl>
+ * @copyright   2024 RvD
+ * @author      RvD <helpdesk@sebsoft.nl>
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class provider implements \core_privacy\local\metadata\null_provider {
@@ -46,7 +46,7 @@ class provider implements \core_privacy\local\metadata\null_provider {
      *
      * @return  string
      */
-    public static function get_reason() : string {
+    public static function get_reason(): string {
         return 'privacy:metadata';
     }
 

@@ -22,8 +22,8 @@
  *
  * @package     auth_coupon
  *
- * @copyright   2022 Ing. R.J. van Dongen
- * @author      R.J. van Dongen <rogier@sebsoft.nl>
+ * @copyright   2024 RvD
+ * @author      RvD <helpdesk@sebsoft.nl>
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 defined('MOODLE_INTERNAL') || die();
@@ -36,5 +36,5 @@ $plugin->maturity  = MATURITY_STABLE;
 $plugin->cron      = 0;
 $plugin->dependencies = [
     'auth_email' => ANY_VERSION,
-    'block_coupon' => 2022080100
+    'block_coupon' => 2022080100,
 ];
