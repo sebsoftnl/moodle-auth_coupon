@@ -10,7 +10,7 @@ variables:
   MOODLE_DIR: "/var/www/html/moodle"
   # If we want to ignore some templates, provide them here.
   #MUSTACHE_IGNORE_NAMES: "<file>.mustache, <file2>.mustache, ..., <filen>.mustache"
-  PLUGIN: 'auth_antihammer'
+  PLUGIN: 'auth_coupon'
   REPOURL: 'https://github.com/sebsoftnl/moodle-auth_coupon'
   REPOSYS: 'git'
   # Moodle auto format = 0, Markdown = 4, Flat txt = 2
