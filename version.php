@@ -28,13 +28,13 @@
  */
 defined('MOODLE_INTERNAL') || die();
 $plugin = new stdClass();
-$plugin->version   = 2022090100;
-$plugin->requires  = 2020110900;      // YYYYMMDDHH (This is the release version for Moodle 3.10).
-$plugin->release   = '3.7.0 (build 2022090100)';
+$plugin->version   = 2024040900;
+$plugin->requires  = 2022041900;      // YYYYMMDDHH (This is the release version for Moodle 4.0).
+$plugin->release   = '4.0.0 (build 2024040900)';
 $plugin->component = 'auth_coupon'; // Full name of the plugin (used for diagnostics).
 $plugin->maturity  = MATURITY_STABLE;
 $plugin->cron      = 0;
 $plugin->dependencies = [
     'auth_email' => ANY_VERSION,
-    'block_coupon' => 2022080100,
+    'block_coupon' => 2024040900,
 ];
