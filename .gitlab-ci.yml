@@ -54,29 +54,30 @@ variables:
 
 
 # Add more versions if you want/need.
+Moodle 4.5:
+  <<: *job_definition
+  variables:
+    MOODLE_BRANCH: "main"
+
+Moodle 4.4:
+  <<: *job_definition
+  variables:
+    MOODLE_BRANCH: "MOODLE_404_STABLE"
+
 Moodle 4.3:
   <<: *job_definition
   variables:
     MOODLE_BRANCH: "MOODLE_403_STABLE"
-    MOODLE_VERSION: 430
 
 Moodle 4.2:
   <<: *job_definition
   variables:
     MOODLE_BRANCH: "MOODLE_402_STABLE"
-    MOODLE_VERSION: 420
 
 Moodle 4.1:
   <<: *job_definition
   variables:
     MOODLE_BRANCH: "MOODLE_401_STABLE"
-    MOODLE_VERSION: 410
-
-Moodle 4.0:
-  <<: *job_definition
-  variables:
-    MOODLE_BRANCH: "MOODLE_400_STABLE"
-    MOODLE_VERSION: 400
 
 
     #The deploy will create the release in Gitlab. This is required after a tag has been created
