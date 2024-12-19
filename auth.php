@@ -48,7 +48,10 @@ class auth_plugin_coupon extends auth_plugin_email {
         // ... we HAVE to set the correct auth type.
         // Too many processes in Moodle use the authtype which _can_ fail.
         // We WILL force the user to auth=email depending on settings.
-        $this->authtype = 'coupon';
+        $this->config = get_config('auth_coupon');
+        if (!(bool)$this->config->forceauthemail) {
+            $this->authtype = 'coupon';
+        }
     }
 
     /**
@@ -66,7 +69,7 @@ class auth_plugin_coupon extends auth_plugin_email {
      * @return moodle_form A form which edits a record from the user table.
      */
     public function signup_form() {
-        $cdata = ['couponrequired' => (bool)get_config('auth_coupon', 'couponrequired')];
+        $cdata = ['couponrequired' => (bool)$this->config->couponrequired];
         return new \block_coupon\forms\coupon\login_signup_form(null, $cdata);
     }
 
@@ -79,14 +82,13 @@ class auth_plugin_coupon extends auth_plugin_email {
      */
     public function user_signup($user, $notify = true) {
         global $DB;
-        $iconfig = get_config('auth_coupon');
         $result = $this->user_signup_with_confirmation($user, false);
 
         // Assuming the process isn't broken.
         if ($result && !empty($user->id)) {
             // Force email auth?
-            if ((bool)$iconfig->forceauthemail) {
-                $DB->execute('UPDATE {user} SET auth= ? WHERE id = ?', ['email', $user->Id]);
+            if ((bool)$this->config->forceauthemail) {
+                $DB->execute('UPDATE {user} SET auth= ? WHERE id = ?', ['email', $user->id]);
             }
             // Claim coupon.
             \block_coupon\helper::claim_coupon($user->submissioncode, $user->id);
