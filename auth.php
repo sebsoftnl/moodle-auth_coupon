@@ -22,7 +22,7 @@
  *
  * @package     auth_coupon
  *
- * @copyright   Ing. R.J. van Dongen
+ * @copyright   RvD
  * @author      RvD <helpdesk@sebsoft.nl>
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
@@ -33,12 +33,11 @@ require_once($CFG->dirroot . '/auth/email/auth.php');
 /**
  * Plugin for no authentication.
  *
- * @copyright   Ing. R.J. van Dongen
+ * @copyright   RvD
  * @author      RvD <helpdesk@sebsoft.nl>
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class auth_plugin_coupon extends auth_plugin_email {
-
     /**
      * Constructor.
      */
@@ -106,5 +105,4 @@ class auth_plugin_coupon extends auth_plugin_email {
             return $result;
         }
     }
-
 }

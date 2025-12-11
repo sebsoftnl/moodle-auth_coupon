@@ -29,19 +29,25 @@
 defined('MOODLE_INTERNAL') || die;
 
 if ($ADMIN->fulltree || $hassiteconfig) {
-
     $config = get_config('auth_coupon');
     // Settings.
-    $settings->add(new admin_setting_heading('auth_coupon_settings', '',
-            get_string('auth_description', 'auth_coupon')));
+    $settings->add(new admin_setting_heading(
+        'auth_coupon_settings',
+        '',
+        get_string('auth_description', 'auth_coupon')
+    ));
 
-    $settings->add(new admin_setting_configcheckbox('auth_coupon/couponrequired',
-            get_string('couponrequired', 'auth_coupon'),
-            get_string('couponrequired_desc', 'auth_coupon'),
-            0));
+    $settings->add(new admin_setting_configcheckbox(
+        'auth_coupon/couponrequired',
+        get_string('couponrequired', 'auth_coupon'),
+        get_string('couponrequired_desc', 'auth_coupon'),
+        0
+    ));
 
-    $settings->add(new admin_setting_configcheckbox('auth_coupon/forceauthemail',
-            get_string('forceauthemail', 'auth_coupon'),
-            get_string('forceauthemail_desc', 'auth_coupon'),
-            0));
+    $settings->add(new admin_setting_configcheckbox(
+        'auth_coupon/forceauthemail',
+        get_string('forceauthemail', 'auth_coupon'),
+        get_string('forceauthemail_desc', 'auth_coupon'),
+        0
+    ));
 }

@@ -53,10 +53,20 @@ variables:
     - if [ "${#failures[@]}" -gt "0" ]; then echo "${#failures[@]} jobs failed"; exit 1; fi;
 
 
-Moodle 5.0:
+Moodle 5.2:
   <<: *job_definition
   variables:
     MOODLE_BRANCH: "main"
+
+Moodle 5.1:
+  <<: *job_definition
+  variables:
+    MOODLE_BRANCH: "MOODLE_501_STABLE"
+
+Moodle 5.0:
+  <<: *job_definition
+  variables:
+    MOODLE_BRANCH: "MOODLE_500_STABLE"
 
 Moodle 4.5:
   <<: *job_definition

@@ -27,7 +27,6 @@
  * Custom code to be run on installing the plugin.
  */
 function xmldb_auth_coupon_install() {
-
     set_config('couponrequired', 0, 'auth_coupon');
     set_config('forceauthemail', 0, 'auth_coupon');
 
